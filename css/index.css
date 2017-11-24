@@ -1,0 +1,190 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 401018 */
+    src: url('https://at.alicdn.com/t/font_401018_9v2n43infj1t6gvi.eot');
+    src: url('https://at.alicdn.com/t/font_401018_9v2n43infj1t6gvi.eot?#iefix') format('embedded-opentype'),
+    url('https://at.alicdn.com/t/font_401018_9v2n43infj1t6gvi.woff') format('woff'),
+    url('https://at.alicdn.com/t/font_401018_9v2n43infj1t6gvi.ttf') format('truetype'),
+    url('https://at.alicdn.com/t/font_401018_9v2n43infj1t6gvi.svg#iconfont') format('svg');
+}
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+html{
+    font-size: 100px;
+    width: 100%;
+    height: 100%;
+}
+@media screen and (min-width: 320px){
+    html{
+        font-size: 42.6px;
+    }
+}
+@media screen and (min-width: 375px){
+    html{
+        font-size: 50px;
+    }
+}
+@media screen and (min-width: 360px){
+    html{
+        font-size: 48px;
+    }
+}
+@media screen and (min-width: 412px){
+    html{
+        font-size: 55px;
+    }
+}
+@media screen and (min-width: 414px){
+    html{
+        font-size: 55.2px;
+    }
+}
+@media screen and (min-width: 768px){
+    html{
+        font-size: 102.4px;
+    }
+}
+@media screen and (min-width: 1024px){
+    html{
+        font-size: 136.5px;
+    }
+}
+.toubu{
+    width: 100%;
+    height: 1rem;
+    background: #362762;
+    font-size: .4rem;
+    color: white;
+    line-height: 1rem;
+    padding-left: .2rem;
+}
+.banner{
+    /*background: rgba(30, 150, 242, 0.51);*/
+    border: 1px solid rgba(30, 150, 242, 0);
+}
+.chengshi{
+    height: 1rem;
+    padding-left: .2rem;
+    line-height: 0.5rem;
+}
+.dingwei{
+    width: .5rem;
+    height: .5rem;
+    margin-top: .25rem;
+    /*background: #ccc;*/
+    float: left;
+}
+.dingwei a{
+    display: block;
+    font-size: .4rem;
+    text-align: center;
+    line-height: .5rem;
+    color: rgba(59, 59, 52, 0.8);
+}
+#province{
+    width: 43%;
+    height: 100%;
+    font-size: 0.4rem;
+    border-radius: .5rem;
+    background: rgba(250, 117, 100, 1);
+}
+#city{
+    width: 43%;
+    height: 100%;
+    font-size: 0.4rem;
+    border-radius: .5rem;
+    background: rgba(250, 117, 100, 1);
+}
+.wendu{
+    width: 4rem;
+    height: 4rem;
+    /*background: red;*/
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+.shu{
+    font-size: 3.5rem;
+    text-align: center;
+    line-height: 4rem;
+    font-weight: 400;
+    color: #043567;
+    /*float: left;*/
+}
+.sheshi{
+    font-size: .5rem;
+    margin-top: 1rem;
+    position: absolute;
+    bottom: 2.8rem;
+    right: .6rem;
+}
+.kongqi{
+    width: 3rem;
+    height: 4rem;
+    float: right;
+    /*background: blue;*/
+    padding-top: 1rem;
+}
+.zhiliang{
+    width: 2.5rem;
+    height: .4rem;
+    background: yellow;
+    margin: 0 auto;
+    border-radius: .2rem;
+    font-size: .35rem;
+    line-height: .4rem;
+    text-align: center;
+    color: #000;
+
+}
+.fensu{
+    font-size: .6rem;
+    line-height: 1rem;
+    text-align: center;
+}
+.shidu{
+    font-size: .6rem;
+    line-height: 1rem;
+    text-align: center;
+}
+.xingqi{
+    width: 100%;
+    height: 7rem;
+    background-color: rgba(54, 39, 98, 0.52);
+    float: left;
+
+}
+.xingqi li{
+    height: 1rem;
+
+}
+.xingqi span{
+    font-size: 16px;
+    line-height: .8rem;
+    margin-left: .2rem;
+    float: left;
+}
+.xingqi img{
+    float: left;
+    width: .5rem;
+    height: .5rem;
+    margin-left: .5rem;
+    margin-top: 8px;
+    line-height: .8rem;
+}
+.xingqi p {
+    float: right;
+    font-size: 14px;
+    margin-right: .2rem;
+    line-height: .8rem;
+}
+body{
+    background: url("../img/df5a5090b886342249f02c8c941c0c3c.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

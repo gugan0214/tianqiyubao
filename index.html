@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="toubu">我的天气</div>
+<div class="banner">
+    <div class="chengshi">
+        <div class="dingwei">
+            <a href="" class="iconfont">&#xe630;</a>
+        </div>
+        <select id="province">
+            <option value="0">--请选择省份--</option>
+        </select>
+        <select id="city">
+            <option value="0">--请选择市--</option>
+        </select>
+    </div>
+    <div class="wendu">
+        <div class="shu">6</div>
+        <div class="sheshi">℃</div>
+    </div>
+</div>
+
+<div class="xingqi">
+    <ul>
+
+    </ul>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    function province() {
+        var url = "http://api.jisuapi.com/area/province?appkey=2f168360dd985516";
+        $.ajax({
+            url: url,
+            dataType: "jsonp",
+            success: function (r) {
+                var data = r.result;
+                var str = "<option value=0>--请选择省份--</option>";
+                $.each(data, function (index, val) {
+                    str += "<option value='" + val.id + "' >" + val.name + "</option>"
+                });
+                $("#province").html(str);
+            }
+        })
+    }
+    province();
+
+    $("#province").change(function city() {
+        var val = $(this).val();
+        if (val === "0") {
+            return;
+        }
+        $.ajax({
+            url: "http://api.jisuapi.com/area/city?",
+            data: {parentid: val, appkey: "2f168360dd985516"},
+            dataType: "jsonp",
+            success: function (r) {
+                var data = r.result;
+                var str = "<option value=0>--请选择市--</option>";
+                $.each(data, function (index, val) {
+                    str += "<option value='" + val.name + "' >" + val.name + "</option>"
+                });
+                $("#city").html(str);
+            }
+        })
+    });
+
+    $("#city").change(function () {
+        var val = $(this).val();
+        if (val === "0") {
+            return;
+        }
+        weather(val);
+    });
+    function weather(city) {
+        $.ajax({
+            url: "http://api.jisuapi.com/weather/query?appkey=2f168360dd985516",
+            data:{city:city},
+            dataType: "jsonp",
+            success: function (r) {
+                console.log(r);
+                var data = r.result.daily;
+                console.log(data);
+                var str = "";
+                $.each(data, function (index, ele) {
+                    str += `<li><span>${ele.date}</span><span>${ele.week}</span><img src="weathercn02/${ele.day.img}.png" alt=""><span>${ele.day.weather
+                        }</span><p>${ele.night.templow}℃-${ele.day.temphigh}℃</p></li>`
+                });
+                $(".xingqi ul").html(str);
+            }
+        })
+    }
+</script>
+</html>
